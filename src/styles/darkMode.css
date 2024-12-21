@@ -1,0 +1,47 @@
+body.dark {
+  background-color: #0a193a !important;
+  color: #ffffffa3;
+}
+body.dark h1 {
+  color: #ffffffc9;
+}
+body.dark .input:checked + .slider {
+  background-color: #183153;
+}
+
+body.dark .input:focus + .slider {
+  box-shadow: 0 0 0 10px #ffffff0d;
+}
+body.dark .offer_card.active h2::after,
+body.dark .offer_card:hover h2::after {
+  background-color: var(--lighttextcolor);
+  top: 64%;
+  height: 115px;
+  transition: 0.7s;
+}
+body.dark .offer_card {
+  background-color: #224379;
+  color: #ffffffa3;
+}
+body.dark .offer_card.active,
+body.dark .offer_card:hover {
+  background-color: var(--primarycolor);
+  transition: 0.5s;
+}
+body.dark footer {
+  color: #ffffffa3;
+}
+
+body.dark p {
+  font-weight: 300 !important;
+}
+body.dark h2,
+body.dark h3 {
+  font-weight: 500 !important;
+}
+body.dark .input:focus + .slider {
+  box-shadow: 0 0 0 10px #ffffff10;
+}
+body.dark .swiper-pagination-bullet {
+background-color: #fff;
+}

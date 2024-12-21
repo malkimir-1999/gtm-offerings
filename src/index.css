@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --lightbackground: #f0f0f1;
+  --lighttextcolor: #0a193a;
+  --primarycolor: #01dcfe;
+}
+
+body {
+  font-family: 'Poppins', serif !important;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--lightbackground) !important;
+  color: var(--lighttextcolor) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  letter-spacing: .5px
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1 {
+  font-weight: 600 !important;
+  margin-bottom: 50px;
+}
+h2 {
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+h3 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  transition: 0.5s;
+}
+p {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-bottom: 10px !important;
+}
+.badge {
+  background-color: var(--primarycolor);
+  padding: 5px 7px 4px !important;
+  font-weight: 500 !important;
+  font-size: 25px !important;
+  border-radius: 10px !important;
+  margin-left: 6px;
+  line-height: 25px !important;
+  transition: 0.5s;
+}
+
+/* Toggle Button */
+/* From Uiverse.io by andrew-demchenk0 */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 85px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primarycolor);
+  transition: 0.4s;
+  border-radius: 100px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  background-color: var(--lighttextcolor);
+  transition: 0.4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: auto;
+  right: 10px;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+}
+
+.moon svg {
+  fill: var(--primarycolor);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 10px;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+}
+
+/* .switch:hover */
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 0 10px #00000010;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(114px);
+  background-color: #ffffff;
+}
+
+/* card style */
+.offer_card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  min-height: 485px;
+}
+.button_icon {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: auto;
+  height: 80px;
+  mix-blend-mode: difference;
+  opacity: 0.04;
+}
+.card_image img {
+  width: 100%;
+}
+.card_icon {
+  background-color: var(--primarycolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  padding: 10px;
+  transition: 0.2s;
+}
+.card_icon img {
+  width: 22px;
+  height: auto;
+  transition: 0.5s;
+}
+.offer_card h2::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 30px;
+  position: absolute;
+  left: -1px;
+  top: 30px;
+  border-radius: 0 10px 10px 0;
+  background-color: var(--primarycolor);
+  transition: 0.5s;
+}
+/* Button Style */
+/* From Uiverse.io by gharsh11032000 */
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 20px;
+  border: 1px solid;
+  border-color: transparent;
+  width: fit-content;
+  min-width: 150px;
+  background-color: inherit;
+  border-radius: 100px;
+  color: var(--primarycolor);
+  box-shadow: 0 0 0 1px var(--primarycolor);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 20px;
+  fill: var(--primarycolor);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primarycolor);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--lighttextcolor);
+  border-radius: 100px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: var(--lighttextcolor);
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px var(--primarycolor);
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* hover effects */
+.offer_card.active,
+.offer_card:hover {
+  background-color: var(--primarycolor);
+  transition: 0.5s;
+}
+.offer_card.active h2,
+.offer_card.active h3,
+.offer_card.active p,
+.offer_card:hover h2,
+.offer_card:hover h3,
+.offer_card:hover p {
+  color: var(--lighttextcolor);
+  transition: 0.5s;
+}
+.offer_card.active .animated-button .circle,
+.offer_card.active .badge,
+.offer_card.active .card_icon,
+.offer_card:hover .animated-button .circle,
+.offer_card:hover .badge,
+.offer_card:hover .card_icon {
+  background-color: var(--lighttextcolor);
+  transition: 0.5s;
+}
+.offer_card.active .animated-button,
+.offer_card:hover .animated-button {
+  transition: 0.5s;
+  color: var(--lighttextcolor);
+  box-shadow: 0 0 0 1px var(--lighttextcolor);
+}
+.offer_card.active .animated-button svg,
+.offer_card:hover .animated-button svg {
+  fill: var(--lighttextcolor);
+}
+.offer_card.active .animated-button:active,
+.offer_card:hover .animated-button:active {
+  box-shadow: 0 0 0 4px var(--lighttextcolor);
+}
+.offer_card.active .animated-button:hover,
+.offer_card:hover .animated-button:hover {
+  color: #ffffff;
+}
+.offer_card.active .animated-button:hover svg,
+.offer_card:hover .animated-button:hover svg {
+  fill: #ffffff;
+}
+.offer_card.active .card_icon,
+.offer_card:hover .card_icon {
+  box-shadow: 0 0 0 2px var(--lighttextcolor);
+  border: 3px solid #01dcfe;
+  transition: 0.2s;
+}
+.offer_card.active .card_icon img,
+.offer_card:hover .card_icon img {
+  width: 20px;
+  transition: 0.2s;
+}
+.offer_card.active h2::after,
+.offer_card:hover h2::after {
+background-color: var(--lighttextcolor);
+top: 64%;
+height: 115px;
+transition: 0.7s;
+}
+/* hover effects */
+
+/* swiper-wrapper */
+.swiper-wrapper {
+  padding-bottom: 60px !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #01dcfe !important;
+  width: 30px !important;
+  border-radius: 100px !important;
+  height: 8px !important;
+}
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+@media (min-width: 1400px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
